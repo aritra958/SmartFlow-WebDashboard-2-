@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef6fb;
+  color: #333;
+}
+
+header {
+  background: #1e88e5;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.flow-box {
+  background: #e3f2fd;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.status {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.normal {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.leak {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.valve-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button.open {
+  background: #43a047;
+  color: white;
+}
+
+button.close {
+  background: #e53935;
+  color: white;
+}
+
+.valve-status {
+  margin-top: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.warning {
+  background: #ffeb3b;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tips ul {
+  padding-left: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #bbdefb;
+  font-size: 14px;
+}
+
+canvas {
+  max-width: 100%;
+  margin-top: 20px;
+}
