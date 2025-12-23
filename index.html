@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartFlow – IoT Water Monitoring Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Firebase (v9 compat) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>💧 SmartFlow</h1>
+  <p>Live Flow • Leak Detection • Valve Control</p>
+</header>
+
+<main class="container">
+
+  <!-- FLOW MONITORING -->
+  <section class="card">
+    <h2>🚰 Live Flow Monitoring</h2>
+
+    <div class="flow-grid">
+      <div class="flow-box">
+        <h3>Flow Sensor 1</h3>
+        <p><span id="flow1">0</span> L/min</p>
+      </div>
+
+      <div class="flow-box">
+        <h3>Flow Sensor 2</h3>
+        <p><span id="flow2">0</span> L/min</p>
+      </div>
+
+      <div class="flow-box">
+        <h3>Flow Sensor 3</h3>
+        <p><span id="flow3">0</span> L/min</p>
+      </div>
+    </div>
+
+    <div id="leakStatus" class="status normal">
+      🟢 System Normal
+    </div>
+  </section>
+
+  <!-- VALVE CONTROL -->
+  <section class="card">
+    <h2>🔘 Valve Control Panel</h2>
+
+    <div class="valve-controls">
+      <button class="open" onclick="setValve(1)">OPEN Valve</button>
+      <button class="close" onclick="setValve(0)">CLOSE Valve</button>
+    </div>
+
+    <p class="valve-status">
+      Status: <span id="valveStatus">--</span>
+    </p>
+  </section>
+
+  <!-- CHARTS -->
+  <section class="card">
+    <h2>📊 Flow Analytics</h2>
+
+    <canvas id="lineChart"></canvas>
+    <canvas id="barChart"></canvas>
+  </section>
+
+  <!-- ALERTS -->
+  <section class="card warning" id="alertBox" style="display:none;">
+    ⚠️ Leakage Detected! Please check pipelines.
+  </section>
+
+  <!-- EXTRA -->
+  <section class="card tips">
+    <h2>🌱 Water Saving Tips</h2>
+    <ul>
+      <li>Fix leaks immediately</li>
+      <li>Close valve when not in use</li>
+      <li>Monitor daily flow usage</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  Science Fair Project | Smart Water Conservation
+  <br>
+  <small id="lastUpdate">Last updated: --</small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
